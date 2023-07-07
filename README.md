@@ -2,6 +2,7 @@
 A demo of grpc.Implemented openai's chat method and query model method
 
 1.pip install -r requirements.txt
+
 2.python service.py
 
 If you need a tls version
