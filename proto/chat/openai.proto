@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package openai;
+
+import "result.proto";
+
+service OpenAI {
+
+  rpc get_models(ModelRequest) returns (result.Response);
+
+  rpc chat(ChatRequest) returns (result.Response);
+
+}
+
+message ChatRequest {
+
+  string apikey = 1;
+
+  string question = 2;
+
+  string model = 3;
+
+}
+
+message ModelRequest {
+
+  string apikey = 1;
+
+}
+
+message ModelResponse {
+
+  string id = 1;
+
+  int64 created = 2;
+
+}
+
+message ModelResponseList {
+
+  repeated ModelResponse models = 1;
+
+}
